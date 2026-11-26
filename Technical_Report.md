@@ -1,4 +1,3 @@
-
 ## 1. Executive Summary
 The Stage 3 workflow processes medical delivery requests by collecting delivery details, validating requests and checking driver availability. Available drivers receive a priority route and dispatch through the electric fleet. If no driver is available, the system notifies the customer of a delay and returns the request to validation.
 
@@ -6,6 +5,30 @@ The Stage 3 workflow processes medical delivery requests by collecting delivery 
 - **Structure:** C-P-T-C (Persona, Context, Task, Constraints)
 - **Data Isolation:** XML tags (`<flowchart_data>`)
 - **Reasoning & Verification:** Chain-of-Thought `<thinking>` block + `INSUFFICIENT_DATA` anti-hallucination rule
+
+## 2.Process Logic Breakdown
+
+**- Start: Customer Requests Medical Delivery:** Initiates the delivery process. Source: ‘Start: Customer Requests Medical Delivery’.
+
+**- Data Input: Delivery Address & Urgency Level:** Collects the delivery address and urgency level. Source: ‘Data Input: Delivery Address & Urgency Level’.
+
+**- Action 1: Validate Request Details:** Validates the submitted request details. Source: ‘Action 1: Validate Request Details’.
+  
+**- Decision: Is Driver Available?:** Checks driver availability and determines the next process path. Source: ‘Decision: Is Driver Available?’.
+  
+**- YES branch – Assign Priority Route:** Assigns a priority route when a driver is available. Source: ‘Assign Priority Route’.
+  
+**- Dispatch Electric Fleet Driver:** Dispatches an electric fleet driver along the assigned priority route. Source: ‘Dispatch Electric Fleet Driver’.
+  
+**- End: Medical Package Delivered:** Ends the workflow when the medical package is delivered. Source: ‘End: Medical Package Delivered’.
+  
+**- NO branch – Notify Customer Delay:** Notifies the customer when no driver is available. Source: ‘Notify Customer Delay’.
+  
+**- Loop – Return to Validation:** Returns the process to request validation after notifying the customer of a delay. Source: ‘Validate Request Details’.
+
+Draft Executive Summary & System Prompt Architecture
+Document Process Logic Breakdown
+Add Risk & Error Handling + Red Teaming Audit Logs
 
 ## 3. Risk & Error Handling
 
