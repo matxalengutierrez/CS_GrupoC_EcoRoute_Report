@@ -1,5 +1,3 @@
-# Technical_Report
-## 1.Draft Executive Summary & System Prompt Architecture
 
 ## 2.Process Logic Breakdown
 
@@ -20,5 +18,3 @@
 **- NO branch – Notify Customer Delay:** Notifies the customer when no driver is available. Source: ‘Notify Customer Delay’.
   
 **- Loop – Return to Validation:** Returns the process to request validation after notifying the customer of a delay. Source: ‘Validate Request Details’.
-
-## 3.Add Risk & Error Handling + Red Teaming Audit Logs
